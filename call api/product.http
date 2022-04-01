@@ -1,0 +1,16 @@
+### get all
+GET http://localhost:8000/product/all
+
+### get one
+GET http://localhost:8000/product/one/2002
+
+### insert new product
+POST http://localhost:8000/product/create_new
+Content-Type: application/json
+
+{
+    "name":"product 1",
+    "price":"1200000",
+    "image":"fweifjw"
+}
+

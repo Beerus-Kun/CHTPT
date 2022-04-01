@@ -1,0 +1,18 @@
+### buy
+POST http://localhost:8000/bill/buy
+Content-Type: application/json
+
+{
+    "username": "beerus",
+    "password": "123456",
+    "id_product": "2002"
+}
+
+### login
+GET http://localhost:8000/bill/all
+Content-Type: application/json
+
+{
+    "username": "beerus",
+    "password": "123456"
+}
