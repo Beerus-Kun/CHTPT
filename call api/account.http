@@ -1,12 +1,13 @@
 ### sign up
-GET http://localhost:8000/account/signup
+POST http://localhost:8000/account/signup
 Content-Type: application/json
 
 {
-    "username": "beerus",
+    "username": "beerus7",
     "password": "123456",
     "repassword": "123456",
-    "name": "berrus sama"
+    "name": "long7",
+    "server": "3"
 }
 
 ### login
@@ -14,6 +15,7 @@ POST http://localhost:8000/account/login
 Content-Type: application/json
 
 {
-    "username": "beerus",
-    "password": "123456"
+    "username": "beerus7",
+    "password": "123456",
+    "server": "3"
 }

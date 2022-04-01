@@ -11,6 +11,7 @@ db.selectPassword = (username)=>{
             .input("username", sql.NChar(25), username)
             .query('SELECT password FROM account WHERE username = @username',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result.recordset[0].password)
             })
@@ -25,6 +26,7 @@ db.selectName = (username)=>{
             .input("username", sql.NChar(25), username)
             .query('SELECT name FROM account WHERE username = @username',
             (err, result)=>{
+                pool.close();
                 if(err) return err;
                 else resolve(result.recordset[0].name)
             })

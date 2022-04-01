@@ -12,6 +12,7 @@ db.insertBill = (id_product, username)=>{
             .input("username", sql.NChar(25), username)
             .query('INSERT INTO bill(id_product, username) VALUES (@id_product, @username)',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result.recordsets)
             })
@@ -26,6 +27,7 @@ db.selectBillByUsername = (username)=>{
             .input("username", sql.NChar(25), username)
             .query('SELECT * FROM bill WHERE username = @username',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result.recordset)
             })

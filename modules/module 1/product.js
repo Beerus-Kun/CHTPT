@@ -10,6 +10,7 @@ db.selectAll = ()=>{
         pool.request()
             .query('SELECT * FROM product',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result.recordset)
             })
@@ -24,6 +25,7 @@ db.hasIdProduct = (id_product)=>{
             .input("id_product", sql.Int, id_product)
             .query('SELECT * FROM product WHERE id_product = @id_product',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result.rowsAffected>0)
             })
@@ -38,6 +40,7 @@ db.selectProduct = (id_product)=>{
             .input("id_product", sql.Int, id_product)
             .query('SELECT * FROM product WHERE id_product = @id_product',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result.recordset[0])
             })
@@ -54,6 +57,7 @@ db.insertProduct = (name, image, price)=>{
             .input("price", sql.Int, price)
             .query('INSERT INTO product (name, image, price) VALUES (@name, @image, @price)',
             (err, result)=>{
+                pool.close();
                 if(err) return reject(err);
                 else resolve(result)
             })

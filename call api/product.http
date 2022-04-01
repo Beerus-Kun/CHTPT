@@ -1,5 +1,10 @@
 ### get all
 GET http://localhost:8000/product/all
+Content-Type: application/json
+
+{
+    "server": "2"
+}
 
 ### get one
 GET http://localhost:8000/product/one/2002
@@ -9,8 +14,9 @@ POST http://localhost:8000/product/create_new
 Content-Type: application/json
 
 {
-    "name":"product 1",
+    "name":"product 2",
     "price":"1200000",
-    "image":"fweifjw"
+    "image":"product 2",
+    "server": "3"
 }
 
